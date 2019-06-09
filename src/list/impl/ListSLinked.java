@@ -44,7 +44,7 @@ public class ListSLinked implements List {
 	private SLNode getPreNode(Object e) {
 		SLNode p = head;
 		while(p.getNext() != null) {
-			if(strategy.equal(p.getNext().getDate(), e)) {
+			if(strategy.equal(p.getNext().getData(), e)) {
 				return p;
 			}
 		}
@@ -92,7 +92,7 @@ public class ListSLinked implements List {
 	public boolean contains(Object e) {
 		SLNode p = head.getNext();
 		while(p != null) {
-			if(strategy.equal(p.getDate(), e)) {
+			if(strategy.equal(p.getData(), e)) {
 				return true;
 			}else {
 				p = p.getNext();
@@ -106,7 +106,7 @@ public class ListSLinked implements List {
 		SLNode p = head.getNext();
 		int index = 0;
 		while(p != null) {
-			if(strategy.equal(p.getDate(), e)) {
+			if(strategy.equal(p.getData(), e)) {
 				return index;
 			}else {
 				index++;
@@ -144,7 +144,7 @@ public class ListSLinked implements List {
 	public boolean insertAfter(Object obj, Object e) {
 		SLNode p = head.getNext();
 		while(p != null) {
-			if(strategy.equal(p.getDate(), obj)) {
+			if(strategy.equal(p.getData(), obj)) {
 				SLNode q = new SLNode(e, p.getNext());
 				p.setNext(q);
 				size++;
@@ -162,7 +162,7 @@ public class ListSLinked implements List {
 			throw new OutOfBoundaryException("错误，指定的删除序号越界。");
 		}
 		SLNode p = getPreNode(i);
-		Object obj = p.getNext().getDate();
+		Object obj = p.getNext().getData();
 		p.setNext(p.getNext().getNext());
 		size--;
 		return obj;
@@ -185,7 +185,7 @@ public class ListSLinked implements List {
 			throw new OutOfBoundaryException("错误，指定的序号越界。");
 		}
 		SLNode p = getNode(i);
-		Object obj = p.getDate();
+		Object obj = p.getData();
 		p.setData(e);
 		return obj;
 	}
@@ -196,7 +196,7 @@ public class ListSLinked implements List {
 			throw new OutOfBoundaryException("错误，指定的序号越界。");
 		}
 		SLNode p = getNode(i);
-		return p.getDate();
+		return p.getData();
 	}
 
 }
