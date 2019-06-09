@@ -22,7 +22,7 @@ public class SLNode implements Node {
 	}
 
 	@Override
-	public Object getDate() {
+	public Object getData() {
 		return element;
 	}
 

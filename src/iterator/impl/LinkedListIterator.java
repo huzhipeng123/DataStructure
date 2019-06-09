@@ -70,7 +70,7 @@ public class LinkedListIterator implements Iterator {
 		if (isDone()) {
 			throw new OutOfBoundaryException("错误：已经没有元素。");
 		}
-		return current.getDate();
+		return current.getData();
 	}
 
 }

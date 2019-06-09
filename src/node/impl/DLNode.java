@@ -38,7 +38,7 @@ public class DLNode implements Node {
 	}
 
 	@Override
-	public Object getDate() {
+	public Object getData() {
 		return element;
 	}
 

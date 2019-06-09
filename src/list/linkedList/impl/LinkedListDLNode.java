@@ -150,7 +150,7 @@ public class LinkedListDLNode implements LinkedList {
 	@Override
 	public Object remove(Node p) throws InvalidNodeException {
 		DLNode node = checkPosition(p);
-		Object obj = node.getDate();
+		Object obj = node.getData();
 		node.getPre().setNext(node.getNext());
 		node.getNext().setPre(node.getPre());
 		size--;
@@ -170,7 +170,7 @@ public class LinkedListDLNode implements LinkedList {
 	@Override
 	public Object replace(Node p, Object e) throws InvalidNodeException {
 		DLNode node = checkPosition(p);
-		Object obj = node.getDate();
+		Object obj = node.getData();
 		node.setData(e);
 		return obj;
 	}
